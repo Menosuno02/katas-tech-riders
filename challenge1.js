@@ -16,7 +16,7 @@ function cifrarCesar(texto, num) {
   let resultado = "";
   for (let i = 0; i < texto.length; i++) {
     let letra = texto[i];
-    if (letra != " ") letra = alfabeto[(alfabeto.indexOf(letra) + num) % 27];
+    if (letra !== " ") letra = alfabeto[(alfabeto.indexOf(letra) + num) % 27];
     resultado += letra;
   }
   return resultado;
