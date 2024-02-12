@@ -16,12 +16,12 @@ function cipher(text, shift) {
   for (let i = 0; i < text.length; i++) {
     let letter = text[i];
     if (alphabet.indexOf(letter.toLowerCase()) != -1) {
-      if (letter.toUpperCase() === letter)
-        letter =
-          alphabet[
-            (alphabet.indexOf(letter.toLowerCase()) + shift) % 27
-          ].toUpperCase();
-      else letter = alphabet[(alphabet.indexOf(letter) + shift) % 27];
+      letter.toUpperCase() === letter
+        ? (letter =
+            alphabet[
+              (alphabet.indexOf(letter.toLowerCase()) + shift) % 27
+            ].toUpperCase())
+        : (letter = alphabet[(alphabet.indexOf(letter) + shift) % 27]);
     }
     result += letter;
   }
@@ -30,18 +30,19 @@ function cipher(text, shift) {
 
 function decipher(text, shift) {
   text = vowelReplacements(text);
-  let resultado = "";
+  let result = "";
   for (let i = 0; i < text.length; i++) {
-    let letra = text[i];
-    if (alphabet.indexOf(letra.toLowerCase()) != -1) {
-      let index = (alphabet.indexOf(letra.toLowerCase()) - shift) % 27;
+    let letter = text[i];
+    if (alphabet.indexOf(letter.toLowerCase()) != -1) {
+      let index = (alphabet.indexOf(letter.toLowerCase()) - shift) % 27;
       if (index < 0) index += 27;
-      if (letra.toUpperCase() === letra) letra = alphabet[index].toUpperCase();
-      else letra = alphabet[index];
+      letter.toUpperCase() === letter
+        ? (letter = alphabet[index].toUpperCase())
+        : (letter = alphabet[index]);
     }
-    resultado += letra;
+    result += letter;
   }
-  return resultado;
+  return result;
 }
 
 console.log(cipher("El perro de San Roque no tiene rabo", 13));
