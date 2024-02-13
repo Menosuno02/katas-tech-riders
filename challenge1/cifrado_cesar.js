@@ -72,5 +72,5 @@ function caesarASCII(text, shift = 13, mode = "cipher") {
 }
 
 console.log("CESAR ASCII");
-console.log(caesarASCII("El perro de San Roque no tiene rabo", 13, "cipher"));
-console.log(caesarASCII("Ry creeb qr Fna Ebdhr ab gvrar enob", 13, "decipher"));
+console.log(caesarASCII("El perro de San Roque no tiene rabo", 30, "cipher"));
+console.log(caesarASCII("Ip tivvs hi Wer Vsuyi rs xmiri vefs", 30, "decipher"));
