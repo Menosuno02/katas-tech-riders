@@ -1,5 +1,5 @@
 // CIFRADO CESAR
-// Alejandro López Labajo
+// Alejandro Lopez Labajo
 
 function vowelReplacements(text) {
   return text
